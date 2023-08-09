@@ -1,9 +1,9 @@
 from datetime import datetime
 from uuid import uuid4, UUID
 
-from sqlalchemy.orm import DeclarativeBase
-from sqlalchemy.orm import Mapped
-from sqlalchemy.orm import mapped_column
+from sqlalchemy import DateTime
+from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
+from sqlalchemy.sql import func
 
 __all__ = [
     "BaseModel",
@@ -28,17 +28,25 @@ class BaseModel(DeclarativeBase):
             "verbose_name": "Уникальный идентификатор",
         },
     )
+    is_active: Mapped[bool] = mapped_column(
+        default=True,
+        info={
+            "verbose_name": "Активный",
+        }
+    )
     created_at: Mapped[datetime] = mapped_column(
-        default=datetime.now,
+        DateTime(timezone=True),
+        server_default=func.now(),
         info={
             "verbose_name": "Дата создания",
         },
     )
     updated_at: Mapped[datetime] = mapped_column(
-        default=datetime.now,
+        insert_default=func.now(),
         info={
             "verbose_name": "Дата обновления",
         },
+        nullable=True,
     )
 
     def __repr__(self) -> str:

@@ -1,4 +1,5 @@
 import asyncio
+import sys
 from importlib import import_module
 from logging.config import fileConfig
 
@@ -9,6 +10,10 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 
 from conf import settings
 from db.models import BaseModel
+
+sys.path.insert(0, "")
+sys.path.insert(0, "..")
+sys.path.insert(0, str(settings.BASE_DIR.absolute()))
 
 for app in settings.APPLICATIONS:
     import_module(f"apps.{app}.models")
