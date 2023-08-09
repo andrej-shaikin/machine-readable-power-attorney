@@ -1,0 +1,75 @@
+[flake8]
+max-line-length = 125
+import-order-style = pycharm
+count = True
+statistics = True
+jobs = auto
+
+application-import-names =
+    apps
+
+exclude =
+    .git,
+    .gitignore,
+    *.pot,
+    *.py[co],
+    __pycache__,
+    migrations,
+    .env,
+    .venv,
+
+
+# Flake8 Rules (https://www.flake8rules.com/)
+ignore =
+    # I201 Missing newline between import groups.
+    I201,
+    # I202 Additional newline in a group of imports.
+    I202,
+    # I100 Import statements are in the wrong order
+    I100,
+    # W503 line break before binary operator (антоним W504)
+    W503
+    # SCS108 assert` statements should not be present in production code
+    SCS108,
+    # E126 continuation line over-indented for hanging indent
+    E126,
+    # U100 Unused argument
+    U100,
+    # CCE001 Attribute should be after
+    CCE001,
+    # CCE002 Class level expression detected in class
+    CCE002,
+    # CCR001 Cognitive complexity is too high
+    CCR001,
+    # ECE001 Expression is too complex
+    ECE001,
+    # CFQ001 Function has length N that exceeds max allowed length 100
+    CFQ001,
+    # CFQ002 Function has N arguments that exceeds max allowed 6
+    CFQ002,
+    # CFQ004 Function has N returns that exceeds max allowed 3
+    CFQ004,
+    # Q000 Double quotes found but single quotes preferred
+    Q000,
+    # H301: one import per line
+    H301,
+    # H306: imports not in alphabetical order
+    H306,
+    # H101: Use TODO(NAME)
+    H101,
+    # TRY003 Avoid specifying long messages outside the exception class
+    TRY003,
+    # DALL000 Module lacks __all__
+    DALL000,
+    # CLB100 no blank line after the end of an indented block
+    CLB100,
+    # H405: multi line docstring summary not separated with an empty line
+    H405,
+    # TRY200 Use 'raise from' to specify exception cause
+    TRY200,
+    # H404: multi line docstring should start without a leading new line
+    H404,
+    # TRY002 Create your own exception
+    TRY002,
+    # TRY401 Do not log exception object, give context instead
+    TRY401,

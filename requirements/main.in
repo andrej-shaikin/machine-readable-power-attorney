@@ -1,0 +1,9 @@
+fastapi
+sqlalchemy>=2.0.19
+alembic
+pydantic
+python-environ
+databases
+asyncpg
+greenlet
+python-dateutil
