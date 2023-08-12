@@ -1,0 +1,7 @@
+.idea
+*.db
+requirements/*.in
+__pycache__
+dodo.py
+LICENSE
+README.md

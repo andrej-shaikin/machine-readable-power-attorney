@@ -119,11 +119,13 @@ click==8.1.6 \
     --hash=sha256:48ee849951919527a045bfe3bf7baa8a959c423134e1a5b98c05c20ba75a1cbd \
     --hash=sha256:fa244bb30b3b5ee2cae3da8f55c9e5e0c0e86093306301fb418eb9dc40fbded5
     # via
+    #   -r requirements/main.txt
     #   consolekit
     #   flake8-dunder-all
     #   mr-proper
     #   pip-tools
     #   tryceratops
+    #   uvicorn
 cloudpickle==2.2.1 \
     --hash=sha256:61f594d1f4c295fa5cd9014ceb3a1fc4a70b0de1164b94fbc2d854ccba056f9f \
     --hash=sha256:d89684b8de9e34a2a43b3460fbca07d09d6e25ce858df4d5a44240403b6178f5
@@ -361,6 +363,12 @@ greenlet==2.0.2 \
     --hash=sha256:f82d4d717d8ef19188687aa32b8363e96062911e63ba22a0cff7802a8e58e5f1 \
     --hash=sha256:fc3a569657468b6f3fb60587e48356fe512c1754ca05a564f11366ac9e306526
     # via -r requirements/main.txt
+h11==0.14.0 \
+    --hash=sha256:8f19fbbe99e72420ff35c00b27a34cb9937e902a8b810e2c88300c6f0a3b699d \
+    --hash=sha256:e3fe4ac4b851c468cc8363d500db52c2ead036020723024a109d37346efaa761
+    # via
+    #   -r requirements/main.txt
+    #   uvicorn
 hacking==6.0.1 \
     --hash=sha256:61d7846fc1b9f26ec21678e99074269095f964d7bbd8cd646eb6c8c4c2f88dc1 \
     --hash=sha256:9588546bd4e12d866df9fc6dc80b0e52145e2d1ac12591da91b633af6df531ed
@@ -751,6 +759,11 @@ typing-extensions==4.7.1 \
     #   sqlalchemy
     #   starlette
     #   tryceratops
+    #   uvicorn
+uvicorn==0.23.2 \
+    --hash=sha256:1f9be6558f01239d4fdf22ef8126c39cb1ad0addf76c40e760549d2c2f43ab53 \
+    --hash=sha256:4d3cc12d7727ba72b64d12d3cc7743124074c0a69f7b201512fc50c3e3f1569a
+    # via -r requirements/main.txt
 vulture==2.8 \
     --hash=sha256:393293f183508064294b0feb4c8579e7f1f27e5bf74c9def6a3d52f38b29b599 \
     --hash=sha256:78bd44972b71d914ac382e64cacd4f56682017dcfa5929d3110ad09453796133
