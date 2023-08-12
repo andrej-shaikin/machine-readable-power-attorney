@@ -2,6 +2,7 @@
 
 pip-tools
 
+isort
 flake8==5.0.4
 dlint
 flake8-bugbear

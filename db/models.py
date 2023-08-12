@@ -1,5 +1,5 @@
 from datetime import datetime
-from uuid import uuid4, UUID
+from uuid import UUID, uuid4
 
 from sqlalchemy import DateTime
 from sqlalchemy.orm import DeclarativeBase, Mapped, mapped_column
@@ -32,7 +32,7 @@ class BaseModel(DeclarativeBase):
         default=True,
         info={
             "verbose_name": "Активный",
-        }
+        },
     )
     created_at: Mapped[datetime] = mapped_column(
         DateTime(timezone=True),

@@ -1,10 +1,10 @@
 from typing import Optional
 
 from sqlalchemy import String
-from sqlalchemy.orm import mapped_column, Mapped
+from sqlalchemy.orm import Mapped, mapped_column
 
 from db.models import BaseModel
-from utils.password import is_compare_passwords, get_password_hash
+from utils.password import get_password_hash, is_compare_passwords
 
 __all__ = [
     "User",
