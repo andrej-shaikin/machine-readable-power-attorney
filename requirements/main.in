@@ -7,3 +7,4 @@ databases
 asyncpg
 greenlet
 python-dateutil
+passlib[bcrypt]

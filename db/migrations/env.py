@@ -11,8 +11,6 @@ from sqlalchemy.ext.asyncio import async_engine_from_config
 from conf import settings
 from db.models import BaseModel
 
-sys.path.insert(0, "")
-sys.path.insert(0, "..")
 sys.path.insert(0, str(settings.BASE_DIR.absolute()))
 
 for app in settings.APPLICATIONS:

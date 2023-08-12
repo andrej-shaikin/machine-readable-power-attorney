@@ -4,6 +4,7 @@ from sqlalchemy import String
 from sqlalchemy.orm import mapped_column, Mapped
 
 from db.models import BaseModel
+from utils.password import is_compare_passwords, get_password_hash
 
 __all__ = [
     "User",
@@ -70,3 +71,10 @@ class User(BaseModel):
 
     def get_full_name(self) -> str:
         return " ".join([self.last_name, self.first_name, self.patronymic or ""]).strip()
+
+    def set_password(self, password: str) -> None:
+        """Установить пароль."""
+        self.password = get_password_hash(password=password)
+
+    def check_password(self, password: str) -> bool:
+        return is_compare_passwords(password=password, hashed_password=self.password)
