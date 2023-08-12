@@ -1,4 +1,5 @@
 VENV = $(CURDIR)/.venv/bin
+GUNICORN_WORKERS_COUNT = 2
 
 .PHONY: none
 
@@ -11,3 +12,6 @@ compile_requirements:
 
 flake8:
 	@$(VENV)/python -m flake8 $(CURDIR)
+
+run_server:
+	@python -m gunicorn app:app --workers $(GUNICORN_WORKERS_COUNT) --worker-class uvicorn.workers.UvicornWorker --bind 0.0.0.0:80

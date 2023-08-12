@@ -8,4 +8,6 @@ asyncpg
 greenlet
 python-dateutil
 passlib[bcrypt]
-uvicorn
+
+gunicorn
+uvicorn[standard]
