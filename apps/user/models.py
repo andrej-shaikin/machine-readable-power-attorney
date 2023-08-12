@@ -13,7 +13,7 @@ __all__ = [
 
 class User(BaseModel):
     """Пользователь."""
-    __tablename__ = "users"
+    __tablename__ = "user_users"
 
     email: Mapped[str] = mapped_column(
         String(length=120),
