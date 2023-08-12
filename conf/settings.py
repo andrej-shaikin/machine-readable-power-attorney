@@ -19,4 +19,5 @@ DATABASE_URL = env.str(var="DATABASE_URL")
 APPLICATIONS = (
     "user",
     "reference",
+    "power_attorney",
 )
