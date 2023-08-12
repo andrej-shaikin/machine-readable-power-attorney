@@ -10,6 +10,8 @@ compile_requirements:
 	@$(VENV)/pip-compile --allow-unsafe --generate-hashes requirements/main.in > requirements/main.txt
 	@$(VENV)/pip-compile --allow-unsafe --generate-hashes requirements/dev.in > requirements/dev.txt
 
+compile_and_install_requirements: compile_requirements install_requirements
+
 flake8:
 	@$(VENV)/python -m flake8 $(CURDIR)
 

@@ -11,3 +11,4 @@ passlib[bcrypt]
 
 gunicorn
 uvicorn[standard]
+lxml
