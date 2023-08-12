@@ -10,7 +10,8 @@ WORKDIR $PROJECT_DIR
 
 COPY requirements requirements
 RUN python3 -m pip install --no-cache-dir -r requirements/main.txt -r requirements/dev.txt
-COPY app.py .flake8 alembic.ini ./
+
+COPY app.py .flake8 alembic.ini  Makefile./
 COPY conf conf
 COPY apps apps
 COPY db db

@@ -1,7 +1,6 @@
 -r main.txt
 
 pip-tools
-doit
 
 flake8==5.0.4
 dlint
