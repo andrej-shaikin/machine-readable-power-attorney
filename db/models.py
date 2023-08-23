@@ -51,3 +51,6 @@ class BaseModel(DeclarativeBase):
 
     def __repr__(self) -> str:
         return f"{self.pk}"
+
+    def __str__(self) -> str:
+        return f"{self.pk}"

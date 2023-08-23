@@ -15,5 +15,6 @@ router = APIRouter()
 async def get_all_users():
     load_only(User.pk, User.first_name, User.email)
     select(User).filter(User.email == "first@kl.ru")
-    async with AsyncSessionLocal():
-        pass
+    async with AsyncSessionLocal() as session:
+        a = await session.execute(select(User).filter(User.email == "first@kl.ru"))
+        b = 4

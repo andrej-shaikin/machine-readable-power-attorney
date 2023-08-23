@@ -2,16 +2,17 @@ import asyncio
 import sys
 from importlib import import_module
 from logging.config import fileConfig
+from pathlib import Path
 
 from alembic import context
 from sqlalchemy import pool
 from sqlalchemy.engine import Connection
 from sqlalchemy.ext.asyncio import async_engine_from_config
 
-from conf import settings
-from db.models import BaseModel
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
-sys.path.insert(0, str(settings.BASE_DIR.absolute()))
+from conf import settings  # noqa:  E402
+from db.models import BaseModel  # noqa:  E402
 
 for app in settings.APPLICATIONS:
     import_module(f"apps.{app}.models")
@@ -26,10 +27,6 @@ config.set_main_option("sqlalchemy.url", settings.DATABASE_URL)
 if config.config_file_name is not None:
     fileConfig(config.config_file_name)
 
-# add your model's MetaData object here
-# for 'autogenerate' support
-# from myapp import mymodel
-# target_metadata = mymodel.Base.metadata
 target_metadata = BaseModel.metadata
 
 
